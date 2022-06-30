@@ -16,7 +16,10 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "vite/client",
-      "vite-plugin-pages/client"
+      "vite-plugin-pages/client",
+      "shims.d.ts",
+      "auto-imports.d.ts",
+      "components.d.ts"
     ],
     "paths": {
       "~/*": ["src/*"]

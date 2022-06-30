@@ -4,7 +4,7 @@
 <template>
   <var-app-bar title="Tiktok with Anonymous" title-position="center">
     <template #left>
-      <a href="https://github.com">
+      <a href="https://github.com/webszy/tiktok_viewer" class="">
         <var-icon name="github" :size="30" />
       </a>
     </template>

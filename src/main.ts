@@ -7,6 +7,7 @@ import 'virtual:windi-utilities.css'
 import dark from '@varlet/ui/es/themes/dark'
 import { StyleProvider } from '@varlet/ui'
 import '@varlet/ui/es/snackbar/snackbar.css'
+import '@varlet/ui/es/popup/popup.css'
 import App from './App.vue'
 const app = createApp(App)
 const router = createRouter({

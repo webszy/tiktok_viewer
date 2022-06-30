@@ -45,7 +45,9 @@ export default defineConfig({
     }),
     WindiCSS(),
   ],
-
+  build: {
+    target: 'esnext',
+  },
   // https://github.com/vitest-dev/vitest
   test: {
     environment: 'jsdom',

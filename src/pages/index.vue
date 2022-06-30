@@ -1,10 +1,15 @@
 <script setup lang="ts">
-/* eslint-disable @typescript-eslint/space-before-blocks,curly */
 import { Snackbar } from '@varlet/ui'
+import type { TUserData } from '~/types'
 
-const username = $ref('')
+const username = ref('tiktok')
+const showLoginResult = ref(false)
+const router = useRouter()
+const handleInput = (e: Event) => {
+  (e.target as HTMLInputElement)?.focus()
+}
 const handleLogin = () => {
-  if (username === ''){
+  if (unref(username) === ''){
     Snackbar.info('username required,not nickName')
   }
   Snackbar({
@@ -14,31 +19,46 @@ const handleLogin = () => {
     forbidClick: true,
     lockScroll: true,
   })
-  setTimeout(() => {
-    Snackbar({
-      type: 'success',
-      position: 'bottom',
-      content: 'please wait',
+  umiRequest<TUserData>('/user', { method: 'get', params: { name: unref(username) } })
+    .then((res) => {
+      if (!res) { throw new Error('request failed') }
+      if (res.code === 404){
+        Snackbar.error({ content: res.message, position: 'top' })
+        return
+      }
+      if (res.code === 200 && res.data){
+        Snackbar.success({
+          position: 'top',
+          content: 'Successfully logged in!',
+        })
+        setUser(res.data)
+        showLoginResult.value = true
+      }
     })
-  }, 5000)
 }
-const errorText = ref('')
+const goMainPage = () => {
+  router.replace('/main')
+}
+const reset = () => {
+  resetStore()
+}
 </script>
 
 <template>
-<div
+  <div
     :class="$style.login"
     class="w-full h-full border-box flex flex-col justify-start items-center"
->
-  <input v-model="username" class="block" placeholder="Your Tiktok username"/>
-  <var-button
+  >
+    <input v-model="username" class="block" placeholder="Your Tiktok username" @click="handleInput($event)">
+    <var-button
       :class="$style.btn"
       ripple
       @click="handleLogin"
-  >
-    Continue &gt;&gt;
-  </var-button>
-</div>
+    >
+      Continue &gt;&gt;
+    </var-button>
+    <LoginResult :show="showLoginResult" @contine="goMainPage" @cancel="reset"/>
+  </div>
 </template>
 
 <style module>

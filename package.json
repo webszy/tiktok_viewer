@@ -2,6 +2,10 @@
   "name": "tk-me",
   "private": true,
   "packageManager": "pnpm@7.1.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webszy/tiktok_viewer"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite --port 3333 --open",
@@ -13,11 +17,14 @@
   "dependencies": {
     "@varlet/ui": "^1.27.15",
     "@vueuse/core": "^8.7.5",
+    "lodash-es": "^4.17.21",
+    "umi-request": "^1.4.0",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.0.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/test-utils": "^2.0.1",
@@ -37,7 +44,11 @@
   "eslintConfig": {
     "extends": "@antfu",
     "rules": {
-      "@typescript-eslint/space-before-blocks": "off"
+      "@typescript-eslint/space-before-blocks": "off",
+      "curly": "off"
     }
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead",">iOS 12"]
 }
