@@ -1,9 +1,11 @@
-import type { TState } from '~/composables/store'
+import type { TState } from './store'
 import type { TUserResponse } from '~/types'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultAvatar = require('../assets/images/defautl_avatar.png')
 export const setUser = (data: TUserResponse) => {
   const store = useState([])
   const userInfo = {
-    profileUrl: data?.user?.avatarThumb,
+    profileUrl: data?.user?.avatarThumb ?? defaultAvatar,
     name: data?.user?.uniqueId,
     followers: data?.user?.followerCount,
     openFavorite: data?.user?.openFavorite,
