@@ -14,6 +14,8 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
 })
+// eslint-disable-next-line no-console
+console.log('routes', routes)
 app.use(router)
 app.mount('#app')
 StyleProvider(dark)

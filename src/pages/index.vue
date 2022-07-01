@@ -37,9 +37,12 @@ const handleLogin = () => {
     })
 }
 const goMainPage = () => {
-  router.replace('/main')
+  debugger
+  router.push({ name: 'main' })
 }
 const reset = () => {
+  showLoginResult.value = false
+  username.value = ''
   resetStore()
 }
 </script>
@@ -57,7 +60,7 @@ const reset = () => {
     >
       Continue &gt;&gt;
     </var-button>
-    <LoginResult :show="showLoginResult" @contine="goMainPage" @cancel="reset"/>
+    <LoginResult :show="showLoginResult" @continue="goMainPage" @cancel="reset" />
   </div>
 </template>
 

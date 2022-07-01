@@ -17,6 +17,7 @@ watch(() => props.show, () => { show.value = props.show }, { flush: 'post' })
 const [profileUrl, name, followers] = useState(['profileUrl', 'name', 'followers'])
 const followerStr = computed(() => shortenLargeNumber(unref(followers), 2))
 const handleContinue = () => {
+  debugger
   emits('continue')
 }
 const handleCancel = () => {

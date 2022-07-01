@@ -4,3 +4,8 @@ declare module '*.vue' {
   export default component
 }
 declare module 'lodash-es'
+declare global {
+  interface Window {
+    store:any;
+  }
+}
