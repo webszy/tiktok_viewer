@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/brace-style,@typescript-eslint/member-delimiter-style */
 import { cloneDeep } from 'lodash-es'
-interface TState {
+export interface TState {
   profileUrl: string;
   name: string;
   followers: number;
   openFavorite: boolean;
   privateAccount: boolean;
   signature: string;
+  heartCount: number;
 }
 const __state: TState = {
   profileUrl: '',
@@ -15,6 +16,7 @@ const __state: TState = {
   openFavorite: false,
   privateAccount: false,
   signature: '',
+  heartCount: 0,
 }
 const state = reactive<TState>(cloneDeep(__state));
 (window as any).store = state

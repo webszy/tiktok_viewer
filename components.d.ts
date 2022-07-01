@@ -12,9 +12,13 @@ declare module '@vue/runtime-core' {
     UserCard: typeof import('./src/components/UserCard.vue')['default']
     VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
+    VarCard: typeof import('@varlet/ui')['_CardComponent']
+    VarChip: typeof import('@varlet/ui')['_ChipComponent']
+    VarCol: typeof import('@varlet/ui')['_ColComponent']
     VarIcon: typeof import('@varlet/ui')['_IconComponent']
     VarImage: typeof import('@varlet/ui')['_ImageComponent']
     VarPopup: typeof import('@varlet/ui')['_PopupComponent']
+    VarRow: typeof import('@varlet/ui')['_RowComponent']
   }
 }
 

@@ -37,7 +37,6 @@ const handleLogin = () => {
     })
 }
 const goMainPage = () => {
-  debugger
   router.push({ name: 'main' })
 }
 const reset = () => {
