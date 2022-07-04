@@ -7,9 +7,11 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     LoginResult: typeof import('./src/components/LoginResult.vue')['default']
+    OnePost: typeof import('./src/components/OnePost.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UserCard: typeof import('./src/components/UserCard.vue')['default']
+    UserPost: typeof import('./src/components/UserPost.vue')['default']
     VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
     VarCard: typeof import('@varlet/ui')['_CardComponent']

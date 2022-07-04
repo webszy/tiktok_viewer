@@ -8,6 +8,21 @@ export interface TState {
   privateAccount: boolean;
   signature: string;
   heartCount: number;
+  post: TPostItem[];
+}
+export interface TPostItem{
+  id: string;
+  commentCount: number;
+  diggCount: number;
+  playCount: number;
+  shareCount: number;
+  dynamicCover: string;
+  originCover: string;
+  cover: string;
+  playAddr: string;
+  downloadAddr: string;
+  desc: string;
+  definition: string;
 }
 const __state: TState = {
   profileUrl: '',
@@ -17,6 +32,7 @@ const __state: TState = {
   privateAccount: false,
   signature: '',
   heartCount: 0,
+  post: [],
 }
 const state = reactive<TState>(cloneDeep(__state));
 (window as any).store = state

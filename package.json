@@ -50,5 +50,7 @@
   },
   "browserslist": [
     "last 2 version",
-    "not dead",">iOS 12"]
+    "not dead",
+    ">iOS 12"
+  ]
 }
