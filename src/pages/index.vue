@@ -49,7 +49,7 @@ const reset = () => {
 <template>
   <div
     :class="$style.login"
-    class="w-full h-full border-box flex flex-col justify-start items-center"
+    class="w-full h-full border-box flex flex-col justify-start items-center box-border"
   >
     <input v-model="username" class="block" placeholder="Your Tiktok username" @click="handleInput($event)">
     <var-button

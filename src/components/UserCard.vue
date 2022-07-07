@@ -15,6 +15,7 @@ const open = () => {
     :subtitle="signature"
     :src="profileUrl"
     layout="row"
+    :style="{ flexShrink: 0 }"
   >
     <template #extra>
       <var-row :gutter="5">

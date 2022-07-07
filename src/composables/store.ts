@@ -9,6 +9,7 @@ export interface TState {
   signature: string;
   heartCount: number;
   post: TPostItem[];
+  webpSupported: boolean;
 }
 export interface TPostItem{
   id: string;
@@ -33,6 +34,7 @@ const __state: TState = {
   signature: '',
   heartCount: 0,
   post: [],
+  webpSupported:false
 }
 const state = reactive<TState>(cloneDeep(__state));
 (window as any).store = state

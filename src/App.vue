@@ -1,6 +1,8 @@
 <template>
-  <AppHeader />
-  <main class="w-full h-full">
-    <router-view />
-  </main>
+  <div class="w-full h-full flex flex-col space-between items-center">
+    <AppHeader />
+    <main class="w-full flex-1 overflow-hidden">
+      <router-view />
+    </main>
+  </div>
 </template>

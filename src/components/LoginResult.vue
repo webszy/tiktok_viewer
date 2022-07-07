@@ -39,6 +39,8 @@ const handleCancel = () => {
         fit="cover"
         :radius="10"
         :src="profileUrl"
+        lazy
+        loading="/img/loading.svg"
       />
       <div :class="$style.info">
         <p>{{ name }}</p>

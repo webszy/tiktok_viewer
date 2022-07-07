@@ -7,5 +7,6 @@ declare module 'lodash-es'
 declare global {
   interface Window {
     store:any;
+    Artplayer:any;
   }
 }
