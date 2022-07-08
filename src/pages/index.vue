@@ -27,10 +27,11 @@ const handleLogin = () => {
         return
       }
       if (res.code === 200 && res.data){
-        Snackbar.success({
-          position: 'top',
-          content: 'Successfully logged in!',
-        })
+        // Snackbar.success({
+        //   position: 'top',
+        //   content: 'Successfully logged in!',
+        // })
+        Snackbar.clear()
         setUser(res.data)
         showLoginResult.value = true
       }
