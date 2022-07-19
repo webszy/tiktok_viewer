@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Snackbar } from '@varlet/ui'
+import { API } from '../api'
 import type { TUserData } from '~/types'
 
-const username = ref('tiktok')
+const username = ref('')
 const showLoginResult = ref(false)
 const router = useRouter()
 const handleInput = (e: Event) => {
@@ -19,14 +20,14 @@ const handleLogin = () => {
     forbidClick: true,
     lockScroll: true,
   })
-  umiRequest<TUserData>('/user', { method: 'get', params: { name: unref(username) } })
+  umiRequest<TUserData>(API.user, { method: 'get', params: { name: unref(username) } })
     .then((res) => {
       if (!res) { throw new Error('request failed') }
-      if (res.code === 404){
+      if (res.status !== 200){
         Snackbar.error({ content: res.message, position: 'top' })
         return
       }
-      if (res.code === 200 && res.data){
+      if (res.status === 200 && res.data){
         // Snackbar.success({
         //   position: 'top',
         //   content: 'Successfully logged in!',

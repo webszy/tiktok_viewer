@@ -1,7 +1,9 @@
 interface TResponse<T>{
-    code:number;
+    status:number;
     data:?T;
     message:any;
+    success:boolean;
+    extra?:any;
 }
 export interface TUserResponse{
     user: {
