@@ -1,5 +1,6 @@
 {
   "name": "tk-me",
+  "version": "1.0.1",
   "private": true,
   "packageManager": "pnpm@7.1.5",
   "repository": {
